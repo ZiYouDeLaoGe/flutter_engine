@@ -120,7 +120,7 @@ class PlatformViewIOS final : public PlatformView {
    public:
     explicit AccessibilityBridgeManager(const std::function<void(bool)>& set_semantics_enabled);
     AccessibilityBridgeManager(const std::function<void(bool)>& set_semantics_enabled,
-                                     AccessibilityBridge* bridge);
+                               AccessibilityBridge* bridge);
     explicit operator bool() const noexcept { return static_cast<bool>(accessibility_bridge_); }
     AccessibilityBridge* get() const noexcept { return accessibility_bridge_.get(); }
     void Set(std::unique_ptr<AccessibilityBridge> bridge);
