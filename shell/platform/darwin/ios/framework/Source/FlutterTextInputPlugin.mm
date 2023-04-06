@@ -1583,6 +1583,10 @@ static FlutterAutofillType autofillTypeOf(NSDictionary* configuration) {
 }
 
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
+  if (self.viewController.view == nil) {
+    result(nil);
+    return;
+  }
   NSString* method = call.method;
   id args = call.arguments;
   if ([method isEqualToString:kShowMethod]) {
